@@ -17,6 +17,28 @@ board.
 
 See [project notes](doc/ProjectNotes.md) for more details on the steps we took to get these working.
 
+## UART to Linux PC example
+
+In [`uart.rs`](src/bin/uart.rs) we have an example program of sending text to a connected
+PC through the UART peripheral, which we connect to a USB to TTL UART adapter.
+
+TODO: We pulled information from a few sources to make this work on the STM32F4DISCOVERY
+board. We will document our work and those sources.
+
+Once this project is setup, you can run it with
+
+```shell
+# in one terminal; your device may vary
+minicom -D /dev/ttyUSB0
+
+# in another terminal, from this directory
+cargo run --bin uart
+```
+
+<p align="center" margin="20px">
+	<img src="https://github.com/seansovine/page_images/blob/main/photos/STM32F4DISCOVERY%20UART%20-%202025-10-10.jpg?raw=true" alt="drawing" width="400" style="padding-top: 10px; padding-bottom: 10px"/>
+</p>
+
 ## Next steps
 
 We will definitely continue to follow the Embedded Rustacean
@@ -24,9 +46,9 @@ We will definitely continue to follow the Embedded Rustacean
 This is a great resource for getting started. See also the accompanying
 [GitHub repository](https://github.com/theembeddedrustacean/learn-stm32f4-rs)
 with instructions on setting up an embedded Rust toolchain for your device.
-Similarly to [The Embedded Rust Book](https://docs.rust-embedded.org/book/),
+Similarly to the situation with the [The Embedded Rust Book](https://docs.rust-embedded.org/book/),
 the example project there has been deprecated, so we had to adapt the instructions
-to use the Knurling app-template project.
+to use the Knurling app-template project. See [project notes](doc/ProjectNotes.md).
 
 We will also continue to look more into the various tools in the embedded Rust
 ecosystem, to get more deeply familiar with them, and will make more example projects for
