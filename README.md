@@ -15,15 +15,19 @@ board.
 2. Imported the blinking LED project from The Embedded Rustacean blog
 	and made small changes to build and run it from the app-template project environment.
 
+3. Imported the Embedded Rustacean UART project with modifcations for our board and an external
+   UART to USB adapter.
+
 See [project notes](doc/ProjectNotes.md) for more details on the steps we took to get these working.
 
 ## UART to Linux PC example
 
-In [`uart.rs`](src/bin/uart.rs) we have an example program of sending text to a connected
-PC through the UART peripheral, which we connect to a USB to TTL UART adapter.
+In [`uart.rs`](src/bin/uart.rs) we have an example program of that sends text to a
+PC through the UART peripheral, which we have connected using a USB to TTL UART adapter,
+as in the photo.
 
-TODO: We pulled information from a few sources to make this work on the STM32F4DISCOVERY
-board. We will document our work and those sources.
+TODO: We pulled information from a few sources to make this work on our
+board. We will document our work and the sources used to set this up from scratch.
 
 Once this project is setup, you can run it with
 
@@ -41,14 +45,16 @@ cargo run --bin uart
 
 ## Next steps
 
-We will definitely continue to follow the Embedded Rustacean
-[STM32 blog series](https://blog.theembeddedrustacean.com/series/stm32f4-embedded-rust-hal).
-This is a great resource for getting started. See also the accompanying
-[GitHub repository](https://github.com/theembeddedrustacean/learn-stm32f4-rs)
+We will continue learning and doing more projects.
+This definitely includes following the Embedded Rustacean STM32
+[blog series](https://blog.theembeddedrustacean.com/series/stm32f4-embedded-rust-hal).
+This is a great resource for getting started. See also the accompanying GitHub
+[repository](https://github.com/theembeddedrustacean/learn-stm32f4-rs)
 with instructions on setting up an embedded Rust toolchain for your device.
 Similarly to the situation with the [The Embedded Rust Book](https://docs.rust-embedded.org/book/),
-the example project there has been deprecated, so we had to adapt the instructions
-to use the Knurling app-template project. See [project notes](doc/ProjectNotes.md).
+the example project template there has been deprecated, so we had to adapt the instructions
+to use the Knurling app-template project. See [project notes](doc/ProjectNotes.md) on this
+and other steps.
 
 We will also continue to look more into the various tools in the embedded Rust
 ecosystem, to get more deeply familiar with them, and will make more example projects for

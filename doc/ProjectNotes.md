@@ -3,6 +3,27 @@
 Here we jot down notes and details about steps taken that will be useful
 to remember later.
 
+## Main steps we followed
+
+So far this project is a mashup of the Knurling app template and Hiari's
+Embedded Rustacean example repository, with our own additions and modifications.
+
+We plan to document all steps from scratch, but for now here is an outline
+and some notes on specific parts:
+
+1. The basis of this project is a clone of the [app-template](https://github.com/knurling-rs/app-template) repo.
+
+2. We followed a combination the steps in that repo and in Hiari's repo to setup the build toolchain.
+
+3. We copied code from Hiari's LED blink and UART blog examples, and modified them to
+   work with our STM32F4DISCOVERY board and with the app-template foundation code.
+
+4. We set up communication over UART with minicom on our Linux PC. (Pretty straightforward.)
+
+4. We experimented with some different parameters and states to change the example behavior.
+
+Next we plan to do... a whole lot more. But those explain the state of this repository.
+
 ## Setting up the toolchain
 
 We followed the instructions on and linked from the Embedded Rustacean GitHub
