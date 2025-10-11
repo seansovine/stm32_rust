@@ -21,14 +21,14 @@ fn main() -> ! {
 
     // Configure the LED pin as a push pull ouput and obtain handler.
     // On the Nucleo FR401 theres an on-board LED connected to pin PA5.
-    let gpioa = dp.GPIOA.split();
-    let mut led = gpioa.pa5.into_push_pull_output();
+    let gpiod = dp.GPIOD.split();
+    let mut led = gpiod.pd13.into_push_pull_output();
 
     // Configure the button pin (if needed) and obtain handler.
     // On the Nucleo FR401 there is a button connected to pin PC13.
     // Pin is input by default
-    let gpioc = dp.GPIOC.split();
-    let button = gpioc.pc13;
+    let gpioa = dp.GPIOA.split();
+    let button = gpioa.pa0;
 
     // Create and initialize a delay variable to manage delay loop
     let mut del_var = 10_0000_u32;
@@ -48,12 +48,13 @@ fn main() -> ! {
 
 // Delay Function
 fn loop_delay<const P: char, const N: u8>(mut del: u32, but: &Pin<P, N>) -> u32 {
+    let loop_bound = del;
     // Loop for until value of del
-    for _i in 1..del {
+    for _i in 1..loop_bound {
         // Check if button got pressed
         if but.is_low() {
             // If button pressed decrease the delay value
-            del = del - 2_5000_u32;
+            del -= 2_5000_u32;
             // If updated delay value reaches zero then reset it back to starting value
             if del < 2_5000 {
                 del = 10_0000_u32;
