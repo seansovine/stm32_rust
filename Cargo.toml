@@ -35,32 +35,32 @@ test = false
 
 [[bin]]
 name = "bitfield"
-path = "src/bin/bitfield.rs"
+path = "src/app_template/bitfield.rs"
 test = false
 
 [[bin]]
 name = "format"
-path = "src/bin/format.rs"
+path = "src/app_template/format.rs"
 test = false
 
 [[bin]]
 name = "hello"
-path = "src/bin/hello.rs"
+path = "src/app_template/hello.rs"
 test = false
 
 [[bin]]
 name = "levels"
-path = "src/bin/levels.rs"
+path = "src/app_template/levels.rs"
 test = false
 
 [[bin]]
 name = "overflow"
-path = "src/bin/overflow.rs"
+path = "src/app_template/overflow.rs"
 test = false
 
 [[bin]]
 name = "panic"
-path = "src/bin/panic.rs"
+path = "src/app_template/panic.rs"
 test = false
 
 [lib]
