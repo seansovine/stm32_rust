@@ -25,6 +25,14 @@ cargo run --bin uart
 	<img src="https://github.com/seansovine/page_images/blob/main/photos/STM32F4DISCOVERY%20UART%20-%202025-10-10.jpg?raw=true" alt="drawing" width="400" style="padding-top: 10px; padding-bottom: 10px"/>
 </p>
 
+## RTIC framework LED blink example
+
+In [`rtic.rs`](src/projects/rtic.rs) we have an example to test out interrupt-driven programming
+using the [RTIC](https://rtic.rs/1/book/en/) framework. It uses a timer interrupt to blink
+an LED while cycling through two different rates periodically. To get started with this we
+followed the tutorial available
+[here](https://dev.to/theembeddedrustacean/stm32f4-embedded-rust-at-the-hal-the-rtic-framework-1j9i).
+
 ## Licenses and credits
 
 To get this project started we've relied on this
