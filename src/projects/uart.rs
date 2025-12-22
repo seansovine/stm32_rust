@@ -19,7 +19,7 @@ use debouncr::{Edge, debounce_3};
 
 // From Knurling template setup:
 // global logger + panicking-behavior + memory layout
-use stm32f4d_test as _;
+use stm32f4d as _;
 
 use stm32f4xx_hal::{
     pac::{self},

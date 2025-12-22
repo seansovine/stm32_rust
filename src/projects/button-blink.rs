@@ -6,7 +6,7 @@
 
 use cortex_m_rt::entry;
 
-use stm32f4d_test as _; // global logger + panicking-behavior + memory layout
+use stm32f4d as _; // global logger + panicking-behavior + memory layout
 
 use stm32f4xx_hal::{
     gpio::Pin,
