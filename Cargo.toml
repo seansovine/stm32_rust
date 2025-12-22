@@ -18,6 +18,11 @@ name = "rtic-example"
 path = "src/projects/rtic.rs"
 test = false
 
+[[bin]]
+name = "rtic-adc-dma"
+path = "src/projects/rtic-adc-dma.rs"
+test = false
+
 # Adaptation of Embedded Rustacean projects.
 
 [[bin]]
