@@ -44,3 +44,5 @@ sources; we've tried to indicated in comments code that closely follows their ex
 Both come with MIT licenses, and we're using their code here in this project for purely
 educational purposes. Much thanks to the authors of those projects for providing such
 great learning resources.
+
+This project is released under the MIT license.
