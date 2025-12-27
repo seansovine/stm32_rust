@@ -79,6 +79,8 @@ mod app {
         // Configure ADC peripheral following Hiari. He says:
         //  Configure ADC for sequence conversion with interrtups.
         let adc_config = AdcConfig::default()
+            // TODO: As we're using this, we could use single DMA mode for
+            //       timer-controlled sampling.
             .dma(Dma::Continuous)
             .scan(Scan::Enabled)
             .resolution(Resolution::Ten)
@@ -87,6 +89,8 @@ mod app {
         let mut adc = Adc::adc1(dp.ADC1, true, adc_config);
         adc.configure_channel(&mic1, Sequence::One, SampleTime::Cycles_480);
         adc.configure_channel(&mic2, Sequence::Two, SampleTime::Cycles_480);
+        // TODO: Our mic has differential outputs; we can see if the Rust
+        //       HAL supports differential ADC inputs for our board.
 
         // Configure orange LED for simple debugging.
         let gpiod = dp.GPIOD.split();
@@ -130,6 +134,8 @@ mod app {
         //  Should be as fast as UART can send,
         //  if we've calculated correctly.
         const ADC_TIMER_RATE_HZ: u32 = 1000;
+        // TODO: For audio 48khz is recommened. But don't think
+        //  we can send data back to the board that quickly
 
         // Setup timer.
         let mut timer = dp.TIM2.counter_hz(&clocks);
@@ -166,6 +172,7 @@ mod app {
         ctx.local.led.toggle();
         ctx.shared.transfer.lock(|transfer| {
             transfer.start(|adc| {
+                // TODO: See note above about Dma::Continuous mode.
                 adc.start_conversion();
             });
         });
