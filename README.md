@@ -51,13 +51,17 @@ power requirements and can operate rail-to-rail with single input supply power f
 
 This also uses the USB UART connection, to send the ADC readings back to a PC for debugging.
 
+_Disclaimer:_
+
+I am an enthusiastic amateur in analog electronics.
+
 ## Licenses and credits
 
 To get this project started we've relied on this
 [learn-stm32f4-rs](https://github.com/theembeddedrustacean/learn-stm32f4-rs)
 project from The Embedded Rustacean and the
 [app-template](https://github.com/knurling-rs/app-template)
-repository from Knurling. Some of the code in this repository is adapted from those two
+repository from Knurling. Much of the code in this repository is adapted from those two
 sources; we've tried to indicated in comments code that closely follows their examples.
 Both come with MIT licenses, and we're using their code here in this project for purely
 educational purposes. Much thanks to the authors of those projects for providing such
